@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fan Control</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f2f5;
+            font-family: Arial, sans-serif;
+        }
+
+        .main {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        img {
+            padding: 50px;
+            border-radius: 50%;
+            animation: fananim linear infinite;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .myBtn,
+        .myBtn-succ,
+        .myBtn-dang {
+            display: inline-block;
+            outline: none;
+            cursor: pointer;
+            border-radius: 50%;
+            font-size: 15px;
+            font-weight: 900;
+            line-height: 10px;
+            padding: 10px;
+            width: 50px;
+            height: 50px;
+            border: none;
+            color: #fff;
+            transition: background-color .17s ease, color .17s ease, transform .17s ease;
+        }
+
+        .myBtn {
+            background-color: rgb(88, 101, 242);
+        }
+
+        .myBtn:hover {
+            background-color: rgb(71, 82, 196);
+            transform: scale(1.1);
+        }
+
+        .myBtn-succ {
+            background-color: #0b9e4d;
+        }
+
+        .myBtn-succ:hover {
+            background-color: #067a3a;
+            transform: scale(1.1);
+        }
+
+        .myBtn-dang {
+            background-color: #ff2c2c;
+        }
+
+        .myBtn-dang:hover {
+            background-color: #c50b0b;
+            transform: scale(1.1);
+        }
+
+        @keyframes fananim {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <img id="img"
+            src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSg682rjjAGeK3jrf8z-vqr4oe261Daq0N8UwaAtqzLII3EvtOh"
+            alt="Fan">
+        <div class="button-container">
+            <button class="myBtn-succ" onclick="myfanon()">ON</button>
+            <button class="myBtn-dang" onclick="myfanoff()">OFF</button>
+            <button class="myBtn" onclick="myfan1()">1</button>
+            <button class="myBtn" onclick="myfan2()">2</button>
+            <button class="myBtn" onclick="myfan3()">3</button>
+        </div>
+    </div>
+
+    <script>
+        let a = document.getElementById("img");
+
+        function myfanon() {
+            a.style.animationDuration = 3 + "s";
+        }
+        function myfanoff() {
+            a.style.animationDuration = 0 + "s";
+        }
+        function myfan1() {
+            a.style.animationDuration = 0.9 + "s";
+        }
+        function myfan2() {
+            a.style.animationDuration = 0.6 + "s";
+        }
+        function myfan3() {
+            a.style.animationDuration = 0.3 + "s";
+        }
+    </script>
+</body>
+
+</html>
